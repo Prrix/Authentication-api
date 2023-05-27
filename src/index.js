@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 
 app.use("/user" , userRouter);
 app.use("/notes" , noteRouter);
-app.get("/" , (res,req)=>
+app.get("/" , (req,res)=>
 {
   res.send("NotesKeeper API with link to drives");
 })
