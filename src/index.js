@@ -5,7 +5,7 @@ dotenv.config();
 
 var bodyParser = require('body-parser')
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 const userRouter =  require("./routes/userRoutes");
 const { default: mongoose } = require('mongoose');
 const { noteRouter } = require('./routes/noteRoutes');
