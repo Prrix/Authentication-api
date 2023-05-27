@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 const userModel = require("../models/user.js");
 const bcrypt = require("bcrypt");
-const SECRET_KEY = "IamTheBoss";
+const SECRET_KEY = process.env.SECRET_KEY;
 
 const signup =  async (req,res)=>{
     
@@ -59,7 +59,7 @@ const signin =  async (req,res)=>{
             id: existingUser._id
         },SECRET_KEY);
 
-        res.status(201).json({username : existingUser.username , token: token});
+        res.status(200).json({username : existingUser.username , token: token});
     }
     catch(error)
     {

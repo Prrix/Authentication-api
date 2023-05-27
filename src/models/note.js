@@ -10,7 +10,7 @@ const NoteSchema = mongoose.Schema({
         type:String,
         required:true
     },
-    owner:{
+    user :{
         type: mongoose.Types.ObjectId,
         ref: "User",
         required:true
